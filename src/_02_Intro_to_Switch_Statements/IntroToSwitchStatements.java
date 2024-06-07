@@ -29,16 +29,12 @@ public class IntroToSwitchStatements {
 
 		case 0:
 			System.out.println("0 from switch");
-			break;
 		case 1:
 			System.out.println("1 from switch");
-			break;
 		case 2:
 			System.out.println("2 from switch");
-			break;
 		default:
 			System.out.println("Out of bounds from switch");
-			break;
 		}
 
 		// 1. Run the program and get all the possible results in the console.
@@ -47,21 +43,32 @@ public class IntroToSwitchStatements {
 
 		// 3. Uncomment the following code.
 
-//		String c = JOptionPane.showInputDialog("Enter a color.");
-//		
-//		if (c.equals("red")) {
-//			System.out.println("red from if-else");
-//		} else if (c.equals("green")) {
-//			System.out.println("green from if-else");
-//		} else if (c.equals("blue")) {
-//			System.out.println("blue from if-else");
-//		} else {
-//			System.out.println("Not RGB from if-else");
-//		}
+	String c = JOptionPane.showInputDialog("Enter a color.");
+		
+		if (c.equals("red")) {
+			System.out.println("red from if-else");
+		} else if (c.equals("green")) {
+			System.out.println("green from if-else");
+		} else if (c.equals("blue")) {
+			System.out.println("blue from if-else");
+		} else {
+		System.out.println("Not RGB from if-else");
+	}
 
 		// 4. Write a switch statement that is logically equivalent to the if-else.
 		// Note: Don't forget to add breaks after each case to avoid fall through.
+switch(c) {
+case "red":
+	System.out.println("red from if-else");
+case "green":
+	System.out.println("green from if-else");
 
+case "blue":
+	System.out.println("blue from if-else");
+
+	default:
+		System.out.println("Not RGB from if-else");
+}
 		// 5. Run the code to make sure the if-else and switch match for each value.
 
 	}
