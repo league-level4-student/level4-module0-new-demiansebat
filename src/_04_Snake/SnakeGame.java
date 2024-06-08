@@ -126,6 +126,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * and the WIDTH and HEIGHT variables respectively.
 		 */
 
+		
 
 		/*
 		 * Set the foodLocation equal to the Location object you just created.
