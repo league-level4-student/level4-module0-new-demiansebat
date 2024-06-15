@@ -1,4 +1,4 @@
-0package _00_Intro_To_Encapsulation;
+package _00_Intro_To_Encapsulation;
 
 public class IntroToEncapsulation {
 
