@@ -10,10 +10,20 @@ public Location(int x, int y) {
 	this.y = y;
 }
 
-public boolean equals(int locationx,int locationy) {
-	if(x==locationx && y==locationy) {
+public boolean equals(Location other) {
+	if(x==other.getX() && y==other.getY()) {
 		return true;
 	}
 	return false;
+}
+
+public int getX() {
+
+	return x;
+}
+
+public int getY() {
+
+	return y;
 }
 }

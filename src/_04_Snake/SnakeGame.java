@@ -159,17 +159,23 @@ foodLocation= newLoc;
 	private void gameOver() {
 
 		// Stop the timer.
-
+timer.stop();
 		// Tell the user their snake is dead.
+JOptionPane.showMessageDialog(null, "Your snake is dead");		// Ask the user if they want to play again.
 
-		// Ask the user if they want to play again.
-
-
+String yesOrNo=JOptionPane.showInputDialog("Would you like to play again (Answer yes or no)");
 		/*
 		 * If the user wants to play again, call the snake's resetLocation method and
 		 * this class's randomizeFoodLocation method then restart the timer. Otherwise,
 		 * exit the game.
 		 */
+if(yesOrNo.toLowerCase().equals("yes")) {
+	snake.resetLocation();
+	randomizeFoodLocation();
+	timer.start();
+}else {
+	//exit the game not sure how
+}
 
 	}
 
@@ -177,18 +183,23 @@ foodLocation= newLoc;
 	public void actionPerformed(ActionEvent e) {
 
 		// Call the snake's update method.
-
+snake.update();
 		/*
 		 * If the snake's head is colliding with its own body or out of bounds call the
 		 * gameOver method.
 		 */
-
+if(snake.isHeadCollidingWithBody() && snake.isOutOfBounds()) {
+	gameOver();
+}
 
 		/*
 		 * If the location of the snake's head is equal to the location of the food,
 		 * feed the snake and randomize the food location.
 		 */
-
+if(snake.getHeadLocation().equals(foodLocation)) {
+	snake.feed();
+	randomizeFoodLocation();
+}
 		panel.repaint();
 	}
 }
