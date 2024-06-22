@@ -80,13 +80,15 @@ public class Snake {
 		 */
 
 		Location newThing = new Location(nextX, nextY);
-		newThing.getX() = nextX; // Set the canMove member variable to true.
+	// Set the canMove member variable to true.
 		canMove = true;
 
 	}
 
 	public void setDirection(Direction direction) {
-
+if(canMove && isNotOppositeDirection(direction)) {
+	currentDirection=direction;
+}
 		/*
 		 * If the passed in direction is not the opposite direction of currentDirection
 		 * and canMove is true, set currentDirection to the passed in direction and
@@ -98,7 +100,21 @@ public class Snake {
 	}
 
 	private boolean isNotOppositeDirection(Direction direction) {
-
+if(direction==Direction.LEFT && currentDirection!=Direction.RIGHT) {
+	return true;
+}
+if(direction==Direction.RIGHT && currentDirection!=Direction.LEFT) {
+	return true;
+}
+if(direction==Direction.UP && currentDirection!=Direction.DOWN) {
+	return true;
+}
+if(direction==Direction.DOWN && currentDirection!=Direction.UP) {
+	return true;
+}
+else {
+	return false;
+}
 		/*
 		 * Complete the method so it returns true if the passed in direction is not the
 		 * opposite direction of currentDirection.
@@ -106,12 +122,10 @@ public class Snake {
 		 * For example, if currentDirection is UP and the passed in direction is DOWN
 		 * this method should return false.
 		 */
-
-		return true;
 	}
 
 	public void resetLocation() {
-
+snake.clear();
 		// Clear the snake.
 
 		/*
