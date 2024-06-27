@@ -70,7 +70,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 		panel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
 		window.add(panel);
 
-		timer = new Timer(0, this);
+		timer = new Timer(1000/10, this);
 
 		window.pack();
 		window.addKeyListener(this);
@@ -90,7 +90,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 
 		// Note: Adjust delay here if you want snake to go slower or faster.
 
-		timer.setDelay(250);
+	
 
 		timer.start();
 	}
@@ -175,6 +175,7 @@ if(yesOrNo.toLowerCase().equals("yes")) {
 	timer.start();
 }else {
 	//exit the game not sure how
+	System.exit(0);
 }
 
 	}
@@ -188,8 +189,10 @@ snake.update();
 		 * If the snake's head is colliding with its own body or out of bounds call the
 		 * gameOver method.
 		 */
-if(snake.isHeadCollidingWithBody() && snake.isOutOfBounds()) {
+if(snake.isHeadCollidingWithBody(snake.getHead()) || snake.isOutOfBounds()) {
+
 	gameOver();
+	
 }
 
 		/*
